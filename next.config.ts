@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://projectcampa.vercel.app"
+            value: "https://www.campacolaindustries.com"
           },
           {
             key: "Access-Control-Allow-Methods",
