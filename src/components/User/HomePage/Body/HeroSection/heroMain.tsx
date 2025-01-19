@@ -16,7 +16,7 @@ export const HeroMain = () => {
           background:
             "radial-gradient(50% 50% at 50% 50%, #673C96 0%, #56327D 24.5%, #211330 100%)"
         }}
-        className="h-auto md:min-h-screen px-[16px] sm:px-[25px] md:px-[40px] lg:px-[70px] xl:px-[122px] w-screen  py-[85px] 0.5sm:py-[80px] sm:py-[100px] z-0 md:pb-48 flex  overflow-x-hidden "
+        className="h-auto md:min-h-screen px-[16px] sm:px-[25px] md:px-[40px] lg:px-[70px] xl:px-[122px] w-full  py-[85px] 0.5sm:py-[80px] sm:py-[100px] z-0 md:pb-48 flex  overflow-x-hidden "
       >
         <Image
           src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734301154/hge9vw5xqlbypyowwxz9.svg"
