@@ -24,6 +24,7 @@ export async function POST(request: Request) {
 
     console.log("Data fetched:", { firstname, lastname, state });
     console.log("hello");
+    const lowercaseEmail = email?.toLowerCase();
 
     const existingUser = await User.findOne({ email });
     console.log("Checking existing user with email:", email);
@@ -61,7 +62,7 @@ export async function POST(request: Request) {
     const newUser = await User.create({
       firstname,
       lastname,
-      email,
+      email: lowercaseEmail,
       mobile,
       state,
       city

@@ -98,7 +98,12 @@ export const ApplicantDetailsCard = ({
       );
       console.log(res);
 
-      toast.success(res.data.message);
+      toast.success(res.data.message, {
+        style: {
+          backgroundColor: "black",
+          color: "white"
+        }
+      });
       setLoading(false);
       onClose();
     } catch (error) {
