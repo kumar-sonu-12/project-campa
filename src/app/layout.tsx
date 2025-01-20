@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     "Become an authorized Campa Cola dealer and take advantage of exclusive dealershi opportunities. Join a trusted beverage network, boost your sales, and grow your business with Campa Cola. Apply now to secure your dealership rights today!",
   keywords:
     "Campa Cola dealership, beverage dealership opportunities, start a Campa Cola business, authorized dealer application, trusted beverage brand, dealership network, business growth with Campa Cola, Campa Cola dealer registration, franchise opportunities, beverage industry dealership,campa cola",
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0"
+  robots: "index, follow"
+  // viewport: "width=device-width, initial-scale=1.0"
 };
 
 export default function RootLayout({
