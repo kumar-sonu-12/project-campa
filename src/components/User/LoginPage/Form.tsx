@@ -72,16 +72,17 @@ export const LoginForm = () => {
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
-      const userType = await signInWithGoogle();
+      const user = await signInWithGoogle();
       // console.log(token);
       // const response = await axios.post(
       //   `${process.env.NEXT_PUBLIC_ROUTE_URL}/user/api/login`,
       //   { token }
       // );
-      console.log(userType);
-      if (userType) {
+      console.log(user);
+      if (user.isAdmin) {
         router.push("/admin");
-      } else {
+      }
+      if (user.isVerify && !user.isAdmin) {
         router.push("/user");
       }
       // toast.error(token.message);

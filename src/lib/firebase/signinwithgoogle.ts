@@ -22,7 +22,7 @@ export const signInWithGoogle = async () => {
         color: "white"
       }
     });
-    return response.data.user.isAdmin;
+    return response.data.user;
   } catch (error) {
     console.error("Error during sign-in:", error);
 
