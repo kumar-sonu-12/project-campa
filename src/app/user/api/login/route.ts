@@ -30,8 +30,11 @@ export async function POST(request: Request) {
       return createErrorResponse("User not found", 404);
     }
 
-    if (!user.isVerify) {
-      return createErrorResponse("User must be verified to log in", 400);
+    if (user && !user.isVerify) {
+      return createErrorResponse(
+        "User verification is pending. Please wait 2-3 days for your application to be verified.",
+        400
+      );
     }
 
     if (
