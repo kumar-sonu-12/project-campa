@@ -12,7 +12,7 @@ export const ResponseEmail: React.FC<Readonly<EmailDataProp>> = ({
   state,
   pincode,
   Investment_Plan,
-  Business_Types
+  business_Types
 }) => (
   <div
     style={{
@@ -54,7 +54,7 @@ export const ResponseEmail: React.FC<Readonly<EmailDataProp>> = ({
         <strong>Investment Plan:</strong> {Investment_Plan}
       </p>
       <p>
-        <strong>Business Types:</strong> {Business_Types}
+        <strong>Business Types:</strong> {business_Types}
       </p>
     </div>
     <div style={{ textAlign: "center", marginTop: "20px" }} />
