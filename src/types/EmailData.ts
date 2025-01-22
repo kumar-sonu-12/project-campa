@@ -8,7 +8,7 @@ export interface EmailDataProp {
   landmark?: string;
   state?: string;
   city?: string;
-  Business_Types?: string;
+  business_Types?: string;
   Investment_Plan?: string;
   isVerify?: boolean;
   hasPaid?: boolean;

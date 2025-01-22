@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       mobile,
       Investment_Plan,
       pincode,
-      Business_Types,
+      business_Types: Business_Types,
       email
     });
 
@@ -65,7 +65,8 @@ export async function POST(request: Request) {
       email: lowercaseEmail,
       mobile,
       state,
-      city
+      city,
+      Business_Types
     });
 
     if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
