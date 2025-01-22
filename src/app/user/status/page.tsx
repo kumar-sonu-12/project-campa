@@ -6,7 +6,7 @@ import getUserDetails from "@/services/getUserDetail";
 
 const Page = async () => {
   const res = await getUserDetails({
-    params: "ayanm3206@gmail.com",
+    params: "",
     isReciept: false
   });
   console.log("data", res);
