@@ -15,8 +15,8 @@ export async function sendResponseEmail({
   mobile,
   Investment_Plan,
   pincode,
-  Business_Types,
-  email,
+  business_Types,
+  email
 }: EmailDataProp): Promise<ApiResponse> {
   try {
     const { data, error } = await resend.emails.send({
@@ -33,9 +33,9 @@ export async function sendResponseEmail({
         mobile,
         Investment_Plan,
         pincode,
-        Business_Types,
-        email,
-      }),
+        business_Types,
+        email
+      })
     });
 
     console.log(data);
@@ -43,7 +43,7 @@ export async function sendResponseEmail({
     if (error) {
       return {
         success: false,
-        message: "some error occured!!",
+        message: "some error occured!!"
       };
     }
     return { success: true, message: "succesfull to send verification email" };
