@@ -48,7 +48,7 @@ export const ProcessMain = () => {
         <Image
           src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
           layout="fill"
-          alt=""
+          alt="process background image"
           loading="lazy"
           className="absolute opacity-50"
         />
