@@ -30,7 +30,7 @@ export const ApprovalMain = () => {
           className="absolute right-0 top-0 hidden 1.5md:block"
           placeholder="blur"
           blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734390235/amqqenzjk1ewrxe1lspm.svg"
-          alt=""
+          alt="campa bottle image"
         />
         <FrstHeading>APPROVAL PROCESS</FrstHeading>
         <TitleHead>How our System work?</TitleHead>

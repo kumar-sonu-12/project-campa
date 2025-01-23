@@ -5,6 +5,7 @@ import {} from "next/font/local";
 import "./globals.css";
 
 import { Toaster } from "react-hot-toast";
+import { baseMetadata } from "@/lib/seo/metadata";
 // import { NavBar } from "@/components/User/HomePage/Navbar/NavBar";
 
 const merienda = Merienda({
@@ -23,15 +24,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"]
 });
 
-export const metadata: Metadata = {
-  title: "Campa Cola Dealership - Start Your Business as an Authorized Dealer",
-  description:
-    "Become an authorized Campa Cola dealer and take advantage of exclusive dealershi opportunities. Join a trusted beverage network, boost your sales, and grow your business with Campa Cola. Apply now to secure your dealership rights today!",
-  keywords:
-    "Campa Cola dealership, beverage dealership opportunities, start a Campa Cola business, authorized dealer application, trusted beverage brand, dealership network, business growth with Campa Cola, Campa Cola dealer registration, franchise opportunities, beverage industry dealership,campa cola",
-  robots: "index, follow"
-  // viewport: "width=device-width, initial-scale=1.0"
-};
+export const metadata: Metadata = baseMetadata;
 
 export default function RootLayout({
   children

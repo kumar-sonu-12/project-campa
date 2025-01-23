@@ -6,9 +6,9 @@ interface HeadProp {
 
 export const TitleHead = ({ children }: HeadProp) => {
   return (
-    <div className="text-[#E7D2FF] text-center font-[900] text-[32px] sm:text-[36px] md:text-[38px] lg:text-[40px] leading-[40px] sm:leading-[44px] md:leading-[54px]">
+    <h1 className="text-[#E7D2FF] text-center font-[900] text-[32px] sm:text-[36px] md:text-[38px] lg:text-[40px] leading-[40px] sm:leading-[44px] md:leading-[54px]">
       {children}
-    </div>
+    </h1>
   );
 };
 

@@ -84,7 +84,7 @@ export const ContactFormMain = ({ mainForm }: { mainForm: boolean }) => {
       <Image
         src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
         layout="fill"
-        alt=""
+        alt="main bg image"
         placeholder="blur"
         blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
         className="absolute inset-0 object-cover opacity-50"

@@ -104,7 +104,7 @@ export const AboutUsMain = () => {
               height={60}
               placeholder="blur"
               blurDataURL={items.svgUrl}
-              alt="clock"
+              alt={items.Title}
             />
             <BoxTitle>{items.Title}</BoxTitle>
             <div

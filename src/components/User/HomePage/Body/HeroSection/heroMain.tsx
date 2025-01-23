@@ -20,7 +20,7 @@ export const HeroMain = () => {
       >
         <Image
           src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734301154/hge9vw5xqlbypyowwxz9.svg"
-          alt="background"
+          alt="hero background image"
           layout="fill"
           style={{
             mixBlendMode: "overlay"
@@ -33,7 +33,7 @@ export const HeroMain = () => {
           src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734317185/dpe2njiwb1ckgzbpyfwb.svg"
           width={813}
           height={826}
-          alt="main img"
+          alt="hero main img"
           placeholder="blur"
           blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734317185/dpe2njiwb1ckgzbpyfwb.svg"
           className="absolute right-[1%] top-[30%] opacity-10 0.5sm:opacity-35 1.5xl:opacity-100 sm:block z-0 1.5xl:z-[100]"
@@ -48,7 +48,7 @@ export const HeroMain = () => {
               width={206.447}
               placeholder="blur"
               blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734312929/nytukcu2kxxipi5gf7et.svg"
-              alt="logo"
+              alt="hero logo"
             />
           </div>
           <div className="flex  flex-col gap-[30px] 0.5sm:gap-[40px] z-10">

@@ -25,7 +25,7 @@ export const TitleHeading = ({ children }: HeadingProps) => {
   }, []);
 
   return (
-    <div
+    <h1
       style={{
         textShadow: isMediaQueryMatched
           ? "0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -41,7 +41,7 @@ export const TitleHeading = ({ children }: HeadingProps) => {
       className="font-merienda text-[64px] sm:text-[74px] md:text-[90px] lg:text-[104px] xl:text-[124px] font-[900] leading-normal"
     >
       {children}
-    </div>
+    </h1>
   );
 };
 

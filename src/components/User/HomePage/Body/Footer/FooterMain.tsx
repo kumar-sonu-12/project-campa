@@ -26,7 +26,7 @@ export const FooterMain = () => {
         },
         {
           imgUrl: "",
-          label: "Enquiry@Campacolabeverages.com"
+          label: "business@campabeveragesril.in"
         }
       ]
     }
@@ -64,9 +64,9 @@ export const FooterMain = () => {
                 key={index}
                 className="flex flex-col text-white gap-4 md:gap-[28px]"
               >
-                <div className="font-bold text-lg md:text-[28px] text-justify leading-snug">
+                <h2 className="font-bold text-lg md:text-[28px] text-justify leading-snug">
                   {items.topic}
-                </div>
+                </h2>
 
                 {items.labels.map((labelItem, idx) => (
                   <div
@@ -82,7 +82,7 @@ export const FooterMain = () => {
           </div>
         </div>
         <div className="font-medium text-xs md:text-[24px] leading-5 md:leading-[32.4px] text-[#BBBABA] text-center">
-          © 1978 – 2024 Campa Cola Beverages (wings of Reliance Consumer
+          © 1978 – 2025 Campa Cola Beverages (wings of Reliance Consumer
           Products Limited), All Rights Reserved.
         </div>
       </div>

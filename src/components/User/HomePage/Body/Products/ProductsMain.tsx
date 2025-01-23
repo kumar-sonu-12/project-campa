@@ -10,11 +10,28 @@ import Image from "next/image";
 
 export const ProductsMain = () => {
   const ProductsUrl = [
-    "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395944/s4pbegsonkz1yltkvi9w.svg",
-    "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/dpg0pegafjh9vdedqaok.svg",
-    "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/eumrucefhpgx1o8uak2i.svg",
-    "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395946/bkj2hy0ckqlahpkbfqxe.svg"
+    {
+      imgUrl:
+        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395944/s4pbegsonkz1yltkvi9w.svg",
+      imgTitle: "campa cola image"
+    },
+    {
+      imgUrl:
+        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/dpg0pegafjh9vdedqaok.svg",
+      imgTitle: "campa orange image"
+    },
+    {
+      imgUrl:
+        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/eumrucefhpgx1o8uak2i.svg",
+      imgTitle: "campa lemon image"
+    },
+    {
+      imgUrl:
+        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395946/bkj2hy0ckqlahpkbfqxe.svg",
+      imgTitle: "campa powerup image"
+    }
   ];
+
   const productData = [
     {
       title: "A Taste of Nostalgia",
@@ -67,12 +84,12 @@ export const ProductsMain = () => {
             {ProductsUrl.map((items, index) => (
               <Image
                 key={index}
-                src={items}
+                src={items.imgUrl}
                 height={408}
                 width={233}
-                alt=""
+                alt={items.imgTitle}
                 placeholder="blur"
-                blurDataURL={items}
+                blurDataURL={items.imgUrl}
                 className="bg-cover"
               />
             ))}
@@ -99,7 +116,7 @@ export const ProductsMain = () => {
                 placeholder="blur"
                 blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734396761/osewpofteczb48fcmm5e.svg"
                 className="rounded-xl w-full sm:w-2/3 xl:w-full"
-                alt=""
+                alt="hn hm jeet gaye poster image"
               />
             </div>
           </div>
@@ -120,7 +137,7 @@ export const ProductsMain = () => {
                 src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734397813/or8x8ra6t36lrhhznow6.svg"
                 height={602}
                 width={594}
-                alt=""
+                alt="join the campa revolution image"
                 placeholder="blur"
                 blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734397813/or8x8ra6t36lrhhznow6.svg"
                 className="rounded-xl aspect-video w-full  xl:w-[570px] xl:h-[588px] 1.5xl:w-[594px] 1.5xl:h-[602px]"

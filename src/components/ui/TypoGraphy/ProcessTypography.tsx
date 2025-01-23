@@ -6,17 +6,17 @@ interface HeadProp {
 
 export const FrstHeading = ({ children }: HeadProp) => {
   return (
-    <div className="text-[20px] font-[900] leading-normal text-[#F3B814]">
+    <h1 className="text-[20px] font-[900] leading-normal text-[#F3B814]">
       {children}
-    </div>
+    </h1>
   );
 };
 
 export const TitleHead = ({ children }: HeadProp) => {
   return (
-    <div className="font-merienda text-center 0.5sm:text-left max-w-[944px] z-10 text-[34px] md:text-[56px] lg:text-[64px] font-[900] leading-[43px] md:leading-[80px] lg:leading-[100px]   text-[#E7D2ff]">
+    <h2 className="font-merienda text-center 0.5sm:text-left max-w-[944px] z-10 text-[34px] md:text-[56px] lg:text-[64px] font-[900] leading-[43px] md:leading-[80px] lg:leading-[100px]   text-[#E7D2ff]">
       {children}
-    </div>
+    </h2>
   );
 };
 
