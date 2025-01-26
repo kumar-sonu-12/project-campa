@@ -66,6 +66,7 @@ export async function POST(request: Request) {
       mobile,
       state,
       city,
+      // send_email,
       Business_Types
     });
 

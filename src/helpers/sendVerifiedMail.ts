@@ -15,12 +15,12 @@ export async function sendVerifiedEmail({
   pincode,
   email,
   street,
-  password,
+  password
 }: VerifiedEmailDataProp): Promise<ApiResponse> {
   try {
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: ["mayan6378@gmail.com"],
+      to: ["ayanm3206@gmail.com"],
       subject: "campa customer response",
       react: VerifiedEmail({
         firstname,
@@ -32,8 +32,8 @@ export async function sendVerifiedEmail({
         city,
         state,
         pincode,
-        password,
-      }),
+        password
+      })
     });
 
     console.log(data);
@@ -41,7 +41,7 @@ export async function sendVerifiedEmail({
     if (error) {
       return {
         success: false,
-        message: "some error occured!!",
+        message: "some error occured!!"
       };
     }
     return { success: true, message: "succesfull to send verification email" };
