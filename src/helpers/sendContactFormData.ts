@@ -19,9 +19,10 @@ export async function sendResponseEmail({
   email
 }: EmailDataProp): Promise<ApiResponse> {
   try {
+    console.log(email);
     const { data, error } = await resend.emails.send({
-      from: "campacolaindustries.com",
-      to: ["ayanm3206@gmail.com"],
+      from: "support@campacolaindustries.com",
+      to: "sonukumar.org000@gmail.com",
       subject: "campa customer response",
       react: ResponseEmail({
         firstname,

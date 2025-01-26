@@ -132,7 +132,7 @@ export async function PUT(request: Request) {
     }
 
     if (isVerify) {
-      await sendVerifiedEmail({ ...updatedUser });
+      await sendVerifiedEmail(updatedUser);
     }
 
     const message = isVerify

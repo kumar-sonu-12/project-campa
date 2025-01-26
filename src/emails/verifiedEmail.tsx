@@ -10,8 +10,8 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
   landmark,
   city,
   state,
-  pincode,
-  password,
+  pincode
+  // password
 }) => (
   <div
     style={{
@@ -21,14 +21,15 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
       backgroundColor: "#f9f9f9",
       padding: "20px",
       border: "1px solid #e0e0e0",
-      borderRadius: "8px",
+      borderRadius: "8px"
     }}
   >
     <h1 style={{ color: "#333", textAlign: "center" }}>
-      response from, {firstname} {lastname}!
+      Welcome, {firstname} {lastname}!
     </h1>
     <p style={{ color: "#555", fontSize: "16px", lineHeight: "1.5" }}>
-      Data of verified customer given below. The responses they build on site.
+      Congratulations! Your account has been successfully verified. Below are
+      the details you provided during registration:
     </p>
     <div
       style={{
@@ -36,9 +37,12 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
         padding: "15px",
         border: "1px solid #e0e0e0",
         borderRadius: "8px",
-        marginTop: "20px",
+        marginTop: "20px"
       }}
     >
+      <p>
+        <strong>Name:</strong> {firstname} {lastname}
+      </p>
       <p>
         <strong>Email:</strong> {email}
       </p>
@@ -49,11 +53,39 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
         <strong>Address:</strong> {street}, {landmark}, {city}, {state},{" "}
         {pincode}
       </p>
-      <p>
-        <strong>Your Password:</strong> {password}
-      </p>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <a
+          href="https://campacolaindustries.com/login"
+          style={{
+            display: "inline-block",
+            backgroundColor: "#007bff",
+            color: "#ffffff",
+            textDecoration: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            fontSize: "16px",
+            fontWeight: "bold"
+          }}
+        >
+          Log In to Your Account
+        </a>
+      </div>
     </div>
-    <div style={{ textAlign: "center", marginTop: "20px" }} />
+    {/* <div
+      style={{
+        backgroundColor: "#ffffff",
+        padding: "15px",
+        border: "1px solid #e0e0e0",
+        borderRadius: "8px",
+        marginTop: "20px"
+      }}
+    > */}
+    {/* <p>
+        <strong>Your Temporary Password:</strong>{" "}
+        <span style={{ color: "#d9534f" }}>{password}</span>
+      </p> */}
+    {/* </div> */}
+
     <footer
       style={{
         marginTop: "30px",
@@ -61,10 +93,10 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
         paddingTop: "10px",
         fontSize: "12px",
         color: "#888",
-        textAlign: "center",
+        textAlign: "center"
       }}
     >
-      © {new Date().getFullYear()} Your Company Name. All rights reserved.
+      © {new Date().getFullYear()} Campa Cola Industries. All rights reserved.
     </footer>
   </div>
 );

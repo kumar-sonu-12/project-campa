@@ -19,8 +19,8 @@ export async function sendVerifiedEmail({
 }: VerifiedEmailDataProp): Promise<ApiResponse> {
   try {
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: ["ayanm3206@gmail.com"],
+      from: "support@campacolaindustries.com",
+      to: email,
       subject: "campa customer response",
       react: VerifiedEmail({
         firstname,
