@@ -1,4 +1,5 @@
 export interface EmailDataProp {
+  createdAt?: Date;
   firstname?: string;
   lastname?: string;
   email: string;

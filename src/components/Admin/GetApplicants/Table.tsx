@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { ArrowUpDown, Download, Search } from "lucide-react";
 import ExcelJS from "exceljs";
@@ -53,22 +54,22 @@ export const AllTable = ({ applicantData }: DataProp) => {
     setSearchTerm(term);
 
     const filteredData = applicantData.filter((item) =>
-      Object.values(item).some((value) =>
-        value.toString().toLowerCase().includes(term)
-      )
+      Object.values(item).some((value) => {
+        // Safely handle null or undefined values
+        if (value == null) return false;
+        return value.toString().toLowerCase().includes(term);
+      })
     );
 
     setData(filteredData);
   };
 
   const exportToExcel = async () => {
-    // Only export the currently visible/filtered data
     const visibleData = data;
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Applicants");
 
-    // Custom headers for the Excel file
     const headers = [
       "S.No",
       "Applicant Name",
@@ -76,6 +77,8 @@ export const AllTable = ({ applicantData }: DataProp) => {
       "Mobile",
       "City",
       "State",
+      "business type",
+      "investmenst paln",
       "Is Verified",
       "Has Paid",
       "Is Form Submitted"
@@ -89,6 +92,8 @@ export const AllTable = ({ applicantData }: DataProp) => {
         item.mobile,
         item.city,
         item.state,
+        item.business_Types,
+        item.Investment_Plan,
         item.isVerify ? "Yes" : "No",
         item.hasPaid ? "Yes" : "No",
         item.isFormSubmitted ? "Yes" : "No",
@@ -265,6 +270,15 @@ export const AllTable = ({ applicantData }: DataProp) => {
                           </div>
                         </TableHead>
                         <TableHead
+                          onClick={() => handleSort("Investment_Plan")}
+                          className="cursor-pointer whitespace-nowrap px-2 sm:px-4"
+                        >
+                          <div className="flex items-center gap-2">
+                            Investment Plan
+                            <ArrowUpDown className="h-4 w-4" />
+                          </div>
+                        </TableHead>
+                        <TableHead
                           onClick={() => handleSort("isFormSubmitted")}
                           className="cursor-pointer whitespace-nowrap px-2 sm:px-4"
                         >
@@ -320,6 +334,9 @@ export const AllTable = ({ applicantData }: DataProp) => {
                           </TableCell>
                           <TableCell className="whitespace-nowrap px-2 sm:px-4">
                             {applicant.business_Types}
+                          </TableCell>
+                          <TableCell className="whitespace-nowrap px-2 sm:px-4">
+                            {applicant.Investment_Plan}
                           </TableCell>
                           <TableCell className="whitespace-nowrap px-2 sm:px-4">
                             <span

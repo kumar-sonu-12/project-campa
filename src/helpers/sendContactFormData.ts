@@ -22,7 +22,7 @@ export async function sendResponseEmail({
     console.log(email);
     const { data, error } = await resend.emails.send({
       from: "support@campacolaindustries.com",
-      to: "sonukumar.org000@gmail.com",
+      to: "ayanm3206@gmail.com",
       subject: "campa customer response",
       react: ResponseEmail({
         firstname,
