@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { ArrowUpDown, Download, Search } from "lucide-react";
 import ExcelJS from "exceljs";
