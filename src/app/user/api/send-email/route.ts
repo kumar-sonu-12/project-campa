@@ -2,6 +2,7 @@ import generateRandomPassword from "@/helpers/generatePassword";
 import { sendResponseEmail } from "@/helpers/sendContactFormData";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
+// import { Bus } from "lucide-react";
 
 export async function POST(request: Request) {
   await dbConnect();
@@ -45,6 +46,7 @@ export async function POST(request: Request) {
       );
     }
 
+    console.log("b", Business_Types, "i", Investment_Plan);
     await sendResponseEmail({
       firstname,
       landmark,
@@ -67,7 +69,8 @@ export async function POST(request: Request) {
       state,
       city,
       // send_email,
-      Business_Types
+      Investment_Plan,
+      business_Types: Business_Types
     });
 
     if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {

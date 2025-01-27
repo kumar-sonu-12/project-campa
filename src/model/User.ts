@@ -35,6 +35,7 @@ interface UserDocument extends Document {
   pincode: string;
   password: string;
   isVerify: boolean;
+  Investment_Plan: string;
   hasPaid: boolean;
   isAdmin: boolean;
   isFormSubmitted: boolean;
@@ -84,6 +85,7 @@ const UserSchema = new mongoose.Schema<UserDocument>(
     pincode: { type: String, required: true, default: "100001" },
     password: { type: String, required: true, default: "none" },
     business_Types: { type: String, required: true, default: "none" },
+    Investment_Plan: { type: String, required: true, default: "none" },
     isVerify: { type: Boolean, required: true, default: false },
     hasPaid: { type: Boolean, required: true, default: false },
     isAdmin: { type: Boolean, required: true, default: false },

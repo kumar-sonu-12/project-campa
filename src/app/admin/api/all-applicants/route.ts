@@ -33,7 +33,8 @@ export async function GET(request: Request) {
       hasPaid: 1,
       password: 1,
       isFormSubmitted: 1,
-
+      Investment_Plan: 1,
+      business_Types: 1,
       final_form: 1
     });
     // console.log(users);
