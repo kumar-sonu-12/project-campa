@@ -2,10 +2,15 @@ import generateRandomPassword from "@/helpers/generatePassword";
 import { sendResponseEmail } from "@/helpers/sendContactFormData";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
-// import { Bus } from "lucide-react";
+import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
+import { NextRequest } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   await dbConnect();
+  const authResponse = await userAuthMiddleware(request);
+  if (authResponse.status !== 200) {
+    return authResponse;
+  }
   console.log("hello from backend side");
 
   try {
@@ -20,7 +25,7 @@ export async function POST(request: Request) {
       Investment_Plan,
       pincode,
       Business_Types,
-      email
+      email,
     } = await request.json();
 
     console.log("Data fetched:", { firstname, lastname, state });
@@ -37,11 +42,11 @@ export async function POST(request: Request) {
           message: "Email already exists. Please use another email.",
           isVerify: existingUser.isVerify,
           hasPaid: existingUser.hasPaid,
-          isAdmin: existingUser.isAdmin
+          isAdmin: existingUser.isAdmin,
         }),
         {
           status: 409,
-          headers: { "Content-Type": "application/json" }
+          headers: { "Content-Type": "application/json" },
         }
       );
     }
@@ -58,7 +63,7 @@ export async function POST(request: Request) {
       Investment_Plan,
       pincode,
       business_Types: Business_Types,
-      email
+      email,
     });
 
     const newUser = await User.create({
@@ -70,7 +75,7 @@ export async function POST(request: Request) {
       city,
       // send_email,
       Investment_Plan,
-      business_Types: Business_Types
+      business_Types: Business_Types,
     });
 
     if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
@@ -80,7 +85,7 @@ export async function POST(request: Request) {
         { _id: newUser._id },
         {
           isAdmin: true,
-          password: newPassword
+          password: newPassword,
         },
         { new: true }
       );
@@ -94,11 +99,11 @@ export async function POST(request: Request) {
         message: "Form submitted successfully!",
         isVerify: newUser.isVerify,
         hasPaid: newUser.hasPaid,
-        isAdmin: newUser.isAdmin
+        isAdmin: newUser.isAdmin,
       }),
       {
         status: 200,
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       }
     );
   } catch (error) {
@@ -108,7 +113,7 @@ export async function POST(request: Request) {
       JSON.stringify({ error: "Failed to process the request" }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       }
     );
   }
