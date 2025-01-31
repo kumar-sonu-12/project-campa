@@ -1,8 +1,15 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
+import { adminAuthMiddleware } from "@/app/middlewares/AdminAuth";
+import { NextRequest } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   await dbConnect();
+
+  const authResponse = await adminAuthMiddleware(request);
+  if (authResponse.status !== 200) {
+    return authResponse;
+  }
 
   try {
     const url = new URL(request.url);
@@ -35,20 +42,20 @@ export async function GET(request: Request) {
       isFormSubmitted: 1,
       Investment_Plan: 1,
       business_Types: 1,
-      final_form: 1
+      final_form: 1,
     });
     // console.log(users);
 
     return new Response(JSON.stringify(users), {
       status: 200,
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Error fetching users:", error);
 
     return new Response(JSON.stringify({ error: "Failed to fetch users" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     });
   }
 }
