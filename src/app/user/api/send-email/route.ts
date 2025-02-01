@@ -2,16 +2,16 @@ import generateRandomPassword from "@/helpers/generatePassword";
 import { sendResponseEmail } from "@/helpers/sendContactFormData";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
-import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
+// import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   await dbConnect();
-  const authResponse = await userAuthMiddleware(request);
-  if (authResponse.status !== 200) {
-    return authResponse;
-  }
-  console.log("hello from backend side");
+  // const authResponse = await userAuthMiddleware(request);
+  // if (authResponse.status !== 200) {
+  //   return authResponse;
+  // }
+  // console.log("hello from backend side");
 
   try {
     const {
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log("b", Business_Types, "i", Investment_Plan);
+    // console.log("b", Business_Types, "i", Investment_Plan);
     await sendResponseEmail({
       firstname,
       landmark,
