@@ -1,8 +1,15 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
+import { adminAuthMiddleware } from "@/app/middlewares/AdminAuth";
+import { NextRequest } from "next/server";
 
-export async function DELETE(request: Request) {
+export async function DELETE(request: NextRequest) {
   await dbConnect();
+
+  const authResponse = await adminAuthMiddleware(request);
+  if (authResponse.status !== 200) {
+    return authResponse;
+  }
 
   try {
     const { email, mobile } = await request.json();
