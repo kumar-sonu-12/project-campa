@@ -1,15 +1,8 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
-import { adminAuthMiddleware } from "@/app/middlewares/AdminAuth";
-import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET(req: Request) {
   await dbConnect();
-
-  const authResponse = await adminAuthMiddleware(req);
-  if (authResponse.status !== 200) {
-    return authResponse;
-  }
 
   try {
     const url = new URL(req.url);
@@ -21,8 +14,8 @@ export async function GET(req: NextRequest) {
         { firstname: regexFilter },
         { lastname: regexFilter },
         { email: regexFilter },
-        { mobile: regexFilter },
-      ],
+        { mobile: regexFilter }
+      ]
     });
 
     const userData = users.map((user) => ({
@@ -34,17 +27,17 @@ export async function GET(req: NextRequest) {
       city: user.city,
       isVerify: user.isVerify,
       hasPaid: user.hasPaid,
-      _id: user._id,
+      _id: user._id
     }));
 
     return new Response(JSON.stringify({ user: userData }), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     });
   } catch (error) {
     console.error(error);
     return new Response(JSON.stringify({ message: "Internal Server Error" }), {
-      status: 500,
+      status: 500
     });
   }
 }
