@@ -7,11 +7,7 @@ import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   await dbConnect();
-  // const authResponse = await userAuthMiddleware(request);
-  // if (authResponse.status !== 200) {
-  //   return authResponse;
-  // }
-  // console.log("hello from backend side");
+  console.log("hello from backend side");
 
   try {
     const {
@@ -25,7 +21,7 @@ export async function POST(request: NextRequest) {
       Investment_Plan,
       pincode,
       Business_Types,
-      email,
+      email
     } = await request.json();
 
     console.log("Data fetched:", { firstname, lastname, state });
@@ -42,16 +38,16 @@ export async function POST(request: NextRequest) {
           message: "Email already exists. Please use another email.",
           isVerify: existingUser.isVerify,
           hasPaid: existingUser.hasPaid,
-          isAdmin: existingUser.isAdmin,
+          isAdmin: existingUser.isAdmin
         }),
         {
           status: 409,
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json" }
         }
       );
     }
 
-    // console.log("b", Business_Types, "i", Investment_Plan);
+    console.log("b", Business_Types, "i", Investment_Plan);
     await sendResponseEmail({
       firstname,
       landmark,
@@ -63,7 +59,7 @@ export async function POST(request: NextRequest) {
       Investment_Plan,
       pincode,
       business_Types: Business_Types,
-      email,
+      email
     });
 
     const newUser = await User.create({
@@ -75,7 +71,7 @@ export async function POST(request: NextRequest) {
       city,
       // send_email,
       Investment_Plan,
-      business_Types: Business_Types,
+      business_Types: Business_Types
     });
 
     if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
@@ -85,7 +81,7 @@ export async function POST(request: NextRequest) {
         { _id: newUser._id },
         {
           isAdmin: true,
-          password: newPassword,
+          password: newPassword
         },
         { new: true }
       );
@@ -99,11 +95,11 @@ export async function POST(request: NextRequest) {
         message: "Form submitted successfully!",
         isVerify: newUser.isVerify,
         hasPaid: newUser.hasPaid,
-        isAdmin: newUser.isAdmin,
+        isAdmin: newUser.isAdmin
       }),
       {
         status: 200,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" }
       }
     );
   } catch (error) {
@@ -113,7 +109,7 @@ export async function POST(request: NextRequest) {
       JSON.stringify({ error: "Failed to process the request" }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" }
       }
     );
   }

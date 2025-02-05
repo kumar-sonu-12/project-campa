@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://www.campacolaindustries.com"
+            value: `${process.env.NEXT_PUBLIC_ROUTE_URL}`
           },
           {
             key: "Access-Control-Allow-Methods",
@@ -45,7 +45,7 @@ const nextConfig: NextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://projectcampa.vercel.app"
+            value: `${process.env.NEXT_PUBLIC_ROUTE_URL}`
           },
           {
             key: "Access-Control-Allow-Methods",

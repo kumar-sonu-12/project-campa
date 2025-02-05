@@ -1,8 +1,21 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
+// import { adminAuthMiddleware } from "@/app/middlewares/AdminAuth";
+import { NextRequest } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   await dbConnect();
+  // const cookie = request.cookies.getAll();
+  // console.log("cookieData", cookie);
+
+  // const authResponse = await adminAuthMiddleware(request);
+  // console.log("authresponse", authResponse);
+  // if (!authResponse || authResponse.status !== 200) {
+  //   return new NextResponse(JSON.stringify({ error: "Unauthorized access" }), {
+  //     status: authResponse?.status || 401,
+  //     headers: { "Content-Type": "application/json" }
+  //   });
+  // }
 
   try {
     const url = new URL(request.url);

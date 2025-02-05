@@ -87,7 +87,7 @@ export const ApplicantDetailsCard = ({
     try {
       console.log("kk", response.businessType);
       const res = await axios.put(
-        `${process.env.NEXT_PUBLIC_ROUTE_URL}/admin/api/update-applicants`,
+        `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/admin/update-applicants`,
         {
           email: data[0].email,
           hasPaid: response.hasPaid === "true",

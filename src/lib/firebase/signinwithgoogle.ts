@@ -11,7 +11,7 @@ export const signInWithGoogle = async () => {
 
     const token = await result.user.getIdToken();
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_ROUTE_URL}/user/api/login`,
+      `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/auth/login`,
       { token }
     );
 

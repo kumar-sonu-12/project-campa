@@ -1,14 +1,14 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
-import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
+// import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
 import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   await dbConnect();
-  const authResponse = await userAuthMiddleware(request);
-  if (authResponse.status !== 200) {
-    return authResponse;
-  }
+  // const authResponse = await userAuthMiddleware(request);
+  // if (authResponse.status !== 200) {
+  //   return authResponse;
+  // }
   try {
     const url = new URL(request.url);
     const email = url.searchParams.get("email") || "";
@@ -39,21 +39,26 @@ export async function GET(request: NextRequest) {
       isVerify: 1,
       hasPaid: 1,
       isFormSubmitted: 1,
-      final_form: 1,
+      final_form: 1
     });
     // }
     // console.log(users);
 
     return new Response(JSON.stringify(users), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":
+          process.env.NEXT_PUBLIC_ROUTE_URL || "http://localhost:3000",
+        "Access-Control-Allow-Credentials": "true"
+      }
     });
   } catch (error) {
     console.error("Error fetching users:", error);
 
     return new Response(JSON.stringify({ error: "Failed to fetch users" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     });
   }
 }

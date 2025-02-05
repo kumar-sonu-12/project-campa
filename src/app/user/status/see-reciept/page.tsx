@@ -3,11 +3,14 @@
 // import ReceiptDisplay from "@/components/User/LoginPage/statusPage/RecieptForm";
 import { ReceiptDisplay } from "@/components/User/LoginPage/statusPage/RecieptForm";
 import getUserDetails from "@/services/getUserDetail";
+import { cookies } from "next/headers";
 
 // Dummy data
 const Page = async () => {
+  const cookieStore = await cookies();
+  const userEmail = cookieStore.get("email")?.value;
   const res = await getUserDetails({
-    params: "ayanm3206@gmail.com",
+    params: userEmail || "",
     isReciept: true
   });
 

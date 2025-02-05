@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_preview = `${process.env.NEXT_PUBLIC_ROUTE_URL}/user/api/get-user`;
+const API_URL_preview = `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/user/get-user`;
 
 const getUserDetails = async ({
   params,
@@ -17,7 +17,13 @@ const getUserDetails = async ({
 
     console.log("url:", url);
 
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+      withCredentials: true,
+      headers: {
+        // "Access-Control-Allow-Credentials": "true",
+        "Content-Type": "application/json"
+      }
+    });
 
     return response.data;
   } catch (error) {

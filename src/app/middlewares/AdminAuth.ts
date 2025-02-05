@@ -5,8 +5,13 @@ import { createErrorResponse } from "@/helpers/createErrorResponse";
 
 export async function adminAuthMiddleware(request: NextRequest) {
   try {
+    const cookie = request.cookies.getAll();
+    console.log("cookieData", cookie);
+
     const token = request.cookies.get("token")?.value;
     const isAdmin = request.cookies.get("isAdmin")?.value;
+    console.log("tt", token);
+    console.log(isAdmin);
 
     if (!token || !isAdmin) {
       return createErrorResponse("Unauthorized access", 401);
@@ -14,6 +19,7 @@ export async function adminAuthMiddleware(request: NextRequest) {
 
     const decodedToken = await auth.verifyIdToken(token);
     const { email } = decodedToken;
+    console.log("email", email);
     const lowercaseEmail = email?.toLowerCase();
 
     if (!email) {

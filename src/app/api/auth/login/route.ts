@@ -16,6 +16,7 @@ export async function POST(request: Request) {
 
     const decodedToken = await auth.verifyIdToken(token);
     const { email } = decodedToken;
+    console.log(email);
     const lowercaseEmail = email?.toLowerCase();
 
     if (!email) {
@@ -46,17 +47,13 @@ export async function POST(request: Request) {
 
     console.log(user.isAdmin);
 
-    // Set cookies
-    const maxAge = 7 * 24 * 60 * 60; // 1 week in seconds
+    const maxAge = 7 * 24 * 60 * 60;
     const cookies = [
       `token=${token}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure`,
-      `email=${encodeURIComponent(
-        email
-      )}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure`,
-      `isAdmin=${user.isAdmin}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure`,
+      `email=${email}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure`,
+      `isAdmin=${user.isAdmin}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure`
     ];
 
-    // Respond with user data
     return new Response(
       JSON.stringify({
         message: "Login successful",
@@ -65,15 +62,15 @@ export async function POST(request: Request) {
           firstname: user.firstname,
           lastname: user.lastname,
           isAdmin: user.isAdmin,
-          isVerify: user.isVerify,
-        },
+          isVerify: user.isVerify
+        }
       }),
       {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          "Set-Cookie": cookies.join(", "),
-        },
+          "Set-Cookie": cookies.join(", ")
+        }
       }
     );
   } catch (error) {
@@ -81,11 +78,11 @@ export async function POST(request: Request) {
     return new Response(
       JSON.stringify({
         error: "Failed to log in",
-        details: error instanceof Error ? error.message : "Unknown error",
+        details: error instanceof Error ? error.message : "Unknown error"
       }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" }
       }
     );
   }

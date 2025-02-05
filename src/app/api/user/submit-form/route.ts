@@ -1,15 +1,11 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
 import { createErrorResponse } from "@/helpers/createErrorResponse";
-import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
+// import { userAuthMiddleware } from "@/app/middlewares/UserAuth";
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   await dbConnect();
-  const authResponse = await userAuthMiddleware(request);
-  if (authResponse.status !== 200) {
-    return authResponse;
-  }
 
   try {
     const { email, formData } = await request.json();
@@ -46,7 +42,7 @@ export async function POST(request: NextRequest) {
       "age",
       "landmark",
       "vehicleDetails",
-      "transportFacilities",
+      "transportFacilities"
     ];
 
     for (const field of requiredFields) {
@@ -73,7 +69,7 @@ export async function POST(request: NextRequest) {
     }
 
     user.final_form = {
-      ...formData,
+      ...formData
       // isVerified: true
     };
     user.isFormSubmitted = true;
@@ -86,15 +82,15 @@ export async function POST(request: NextRequest) {
           email: user.email,
           firstname: user.firstname,
           lastname: user.lastname,
-          final_form: user.final_form,
-        },
+          final_form: user.final_form
+        }
       }),
       {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          "Cache-Control": "no-store",
-        },
+          "Cache-Control": "no-store"
+        }
       }
     );
   } catch (error) {

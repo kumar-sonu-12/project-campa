@@ -6,7 +6,22 @@ import { createErrorResponse } from "@/helpers/createErrorResponse";
 export async function userAuthMiddleware(request: NextRequest) {
   try {
     const token = request.cookies.get("token")?.value;
+    console.log("token", token);
+    console.log("🕵️ Authentication Diagnostic Log", {
+      fullUrl: request.url,
+      method: request.method,
 
+      // Detailed Cookie Inspection
+      cookieInspection: {
+        allCookies: request.cookies.getAll(),
+        tokenCookie: request.cookies.get("token")?.value
+          ? "✅ Token Present"
+          : "❌ No Token",
+        adminCookie: request.cookies.get("isAdmin")?.value
+          ? "✅ Admin Cookie Present"
+          : "❌ No Admin Cookie"
+      }
+    });
     if (!token) {
       return createErrorResponse("Unauthorized access", 401);
     }

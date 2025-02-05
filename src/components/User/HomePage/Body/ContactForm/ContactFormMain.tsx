@@ -46,8 +46,8 @@ export const ContactFormMain = ({ mainForm }: { mainForm: boolean }) => {
 
   const { submit } = useFormSubmit({
     routeUrls: [
-      `${process.env.NEXT_PUBLIC_ROUTE_URL}/user/api/send-email`,
-      `${process.env.NEXT_PUBLIC_ROUTE_URL}/user/api/submit-form`
+      `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/user/send-email`,
+      `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/user/submit-form`
     ],
     successMessage: "form submitted",
     mainForm

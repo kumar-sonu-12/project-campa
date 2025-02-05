@@ -1,15 +1,20 @@
-export const dynamic = "force-dynamic";
+import { cookies } from "next/headers";
 import ApplicantStatusPage from "@/components/User/LoginPage/statusPage/StatusPage";
-// import getAllApplicantDetails from "@/services/getApplicantDetails";
 import getUserDetails from "@/services/getUserDetail";
-// import Image from "next/image";
+
+export const dynamic = "force-dynamic";
 
 const Page = async () => {
+  const cookieStore = await cookies();
+  const userEmail = cookieStore.get("email")?.value;
+
+  console.log("User Email from Cookie:", userEmail);
+
   const res = await getUserDetails({
-    params: "",
+    params: userEmail || "",
     isReciept: false
   });
-  console.log("data", res);
+
   return (
     <div>
       <ApplicantStatusPage data={res} />

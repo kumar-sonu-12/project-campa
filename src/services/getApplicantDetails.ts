@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_preview = `${process.env.NEXT_PUBLIC_ROUTE_URL}/admin/api/all-applicants`;
+const API_URL_preview = `${process.env.NEXT_PUBLIC_ROUTE_URL}/api/admin/v11232/all-applicants`;
 
 const getAllApplicantDetails = async ({ params }: { params: string }) => {
   try {

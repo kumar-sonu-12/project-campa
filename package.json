@@ -31,7 +31,9 @@
     "@types/cookie": "^1.0.0",
     "@types/cookies": "^0.9.0",
     "@types/js-cookie": "^3.0.6",
+    "assert": "^2.1.0",
     "axios": "^1.7.9",
+    "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cookie": "^1.0.2",
@@ -49,6 +51,7 @@
     "mongoose": "^8.9.2",
     "motion": "^11.15.0",
     "next": "15.1.0",
+    "process": "^0.11.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.1",
@@ -58,8 +61,10 @@
     "react-to-pdf": "^1.0.1",
     "react-to-print": "^3.0.4",
     "resend": "^4.0.1",
+    "stream-browserify": "^3.0.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "util": "^0.12.5",
     "zod": "^3.24.1"
   },
   "devDependencies": {
