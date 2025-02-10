@@ -10,7 +10,7 @@ export const LoginFormData = [
   {
     label: "password",
     type: "text",
-    id: "lastname",
+    id: "password",
     placeholder: "Enter your password",
     className: "w-full",
     zod: "password"

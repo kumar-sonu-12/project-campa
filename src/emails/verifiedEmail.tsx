@@ -10,8 +10,8 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
   landmark,
   city,
   state,
-  pincode
-  // password
+  pincode,
+  password
 }) => (
   <div
     style={{
@@ -45,6 +45,9 @@ export const VerifiedEmail: React.FC<Readonly<VerifiedEmailDataProp>> = ({
       </p>
       <p>
         <strong>Email:</strong> {email}
+      </p>
+      <p>
+        <strong>Password:</strong> {password}
       </p>
       <p>
         <strong>Mobile:</strong> {mobile}

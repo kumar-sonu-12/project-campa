@@ -8,7 +8,7 @@ export const FooterMain = () => {
         {
           imgUrl: "",
           label:
-            "If You have any Issues or Complaint Please Contact us at: Report-Abuse@campacolabeverages.com"
+            "If You have any Issues or Complaint Please Contact us at: Report-info@campabeveragesril.in"
         },
         {
           imgUrl: "",

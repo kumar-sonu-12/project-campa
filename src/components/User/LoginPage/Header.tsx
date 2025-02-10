@@ -1,5 +1,7 @@
-import { JoinNowButton } from "@/components/ui/MotionVariants/Buttons";
+// import { JoinNowButton } from "@/components/ui/MotionVariants/Buttons";
+import { HomeIcon } from "lucide-react";
 import Image from "next/image";
+import { IconButton } from "./button";
 
 export const LoginHeader = () => {
   return (
@@ -15,7 +17,8 @@ export const LoginHeader = () => {
           alt="logo"
         />
         <div className="flex w-full justify-end">
-          <JoinNowButton label="home" />
+          {/* <JoinNowButton label="home" /> */}
+          <IconButton icon={HomeIcon} href="/" />
         </div>
       </div>
     </div>

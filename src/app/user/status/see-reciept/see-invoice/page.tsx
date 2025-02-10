@@ -41,7 +41,7 @@ const Page = () => {
     const options = {
       margin: [20, 20, 20, 20],
       filename: "Campa-Cola-Invoice.pdf",
-      image: { type: "jpeg", quality: 1 },
+      image: { type: "pdf", quality: 5 },
       html2canvas: {
         scale: 2,
         useCORS: true,
@@ -52,7 +52,7 @@ const Page = () => {
         unit: "mm",
         format: "a4",
         orientation: "portrait",
-        compress: true
+        compress: false
       },
       pagebreak: { mode: ["avoid-all", "css", "legacy"] }
     };
@@ -66,145 +66,149 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-8">
       <div
         id="invoice-content"
-        className="max-w-4xl mx-auto bg-white shadow-lg border-2 border-black/[0.8] rounded-lg overflow-hidden"
+        className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-300 rounded-sm"
       >
-        <div className="p-10 avoid-break t">
-          <div
-            id="heading"
-            className="text-3xl underline font-bold text-blue-600 text-center mb-6"
-          >
-            <span className="">Invoice</span>
-          </div>
-
-          <div className="flex justify-between items-center mb-10 avoid-break">
-            <div className="max-w-[60%]">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                CAMPA COLA COMPANY PRIVATE LIMITED
-              </h2>
-              <div className="space-y-2.5">
-                {CompanyInfoArray.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="text-sm leading-relaxed text-gray-700"
-                  >
-                    {item.head && (
-                      <span className="font-medium text-gray-900">
-                        {item.head}:{" "}
-                      </span>
-                    )}
-                    {item.label}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="w-[200px] h-[150px] relative">
+        <div className="p-10 avoid-break">
+          <div className="mb-12 text-center border-b border-gray-300 pb-8">
+            <div className="mb-6">
               <Image
                 src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734628899/x41x5cm2fvfihhirp7pg.svg"
-                fill
-                style={{ objectFit: "contain" }}
+                width={120}
+                height={80}
                 alt="Company Logo"
-                className="rounded-lg"
+                className="mx-auto grayscale"
               />
             </div>
+            <div className="text-xs text-gray-600 space-y-1">
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                CAMPA COLA COMPANY PRIVATE LIMITED
+              </h1>
+              {CompanyInfoArray.map((item, idx) => (
+                <div key={idx}>
+                  {item.head ? (
+                    <span className="font-medium">
+                      {item.head}: {item.label}
+                    </span>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="bg-blue-50 p-8 rounded-lg mb-10 avoid-break border border-blue-100">
+          {/* Invoice Header */}
+          <div className="flex justify-between items-start mb-10">
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900 mb-2">
+                Invoice To:
+              </h2>
+              <div className="text-sm text-gray-700">
+                <p className="font-medium">NAME</p>
+                <p>State, Pincode</p>
+                <p>email@gmail.com</p>
+                <p>Phone: 7766445343</p>
+              </div>
+            </div>
+            <div className="text-right">
+              <h1 className="text-2xl font-bold text-gray-900 mb-3">INVOICE</h1>
+              <div className="text-sm text-gray-700 space-y-1">
+                <p>
+                  Invoice #: <span className="font-medium">#CAMPA1234</span>
+                </p>
+                <p>Date: 09/01/2025</p>
+                <p>Due Date: 09/01/2025</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Items Table */}
+          <div className="mb-10">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="text-left py-3 px-4 border border-gray-200 text-sm font-semibold text-gray-900">
+                    Description
+                  </th>
+                  <th className="text-right py-3 px-4 border border-gray-200 text-sm font-semibold text-gray-900">
+                    Amount (₹)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {ApplicantData.map((item, idx) => (
+                  <tr key={idx}>
+                    <td className="py-3 px-4 border border-gray-200 text-sm text-gray-700">
+                      {item.head}
+                    </td>
+                    <td className="py-3 px-4 border border-gray-200 text-sm text-gray-900 text-right font-medium">
+                      ₹{item.label}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Payment Terms */}
+          <div className="mb-10 text-sm">
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h3 className="font-semibold text-lg text-gray-900 mb-3">
-                  BILL TO
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Payment Instructions
                 </h3>
-                <p className="text-base font-medium text-gray-800">NAME</p>
-                <p className="text-sm text-gray-700 mt-1">email@gmail.com</p>
-                <p className="text-sm text-gray-700">State, Pincode</p>
+                <p className="text-gray-700 mb-1">
+                  Bank Name: State Bank of India
+                </p>
+                <p className="text-gray-700 mb-1">
+                  Account Number: 110045667889
+                </p>
+                <p className="text-gray-700 mb-1">IFSC Code: SBIN0003456</p>
               </div>
-              <div className="text-right">
-                <div className="space-y-2">
-                  <p className="text-sm font-medium text-gray-900">
-                    Invoice No:{" "}
-                    <span className="text-blue-600">#CAMPA1234</span>
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    Issue Date: <span className="font-medium">09/01/2025</span>
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    Due Date: <span className="font-medium">09/01/2025</span>
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    Phone: <span className="font-medium">7766445343</span>
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Important Notes
+                </h3>
+                <p className="text-red-600 text-xs italic">
+                  * Cash deposits are not accepted. Payment must be made via
+                  bank transfer.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="mb-10 avoid-break">
-            <div className="border border-gray-200 rounded-lg overflow-hidden">
-              <div className="grid grid-cols-2">
-                <div className="bg-gray-50 px-6 py-4 text-sm font-semibold text-gray-900 border-b border-gray-200">
-                  Particulars
-                </div>
-                <div className="bg-gray-50 px-6 py-4 text-sm font-semibold text-gray-900 border-b border-gray-200">
-                  Amount
-                </div>
-              </div>
-              {ApplicantData.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="grid grid-cols-2 border-b border-gray-200 last:border-b-0"
-                >
-                  <div className="px-6 py-4 text-sm text-gray-700">
-                    {item.head}
-                  </div>
-                  <div className="px-6 py-4 text-sm font-medium text-gray-900">
-                    ₹{item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-gray-50 p-6 rounded-lg mb-10 avoid-break border border-gray-200">
-            <h4 className="font-semibold text-lg text-gray-900 mb-4">
-              Payment Information
-            </h4>
-            <div className="space-y-2 text-sm text-gray-700">
-              <p>
-                <span className="font-medium">Payment Mode:</span>{" "}
-                NEFT/RTGS/IMPS/Net Banking
-              </p>
-              <p className="text-red-600 font-medium">
-                Note: Cash deposits are not allowed as per company rules and
-                regulations.
-              </p>
-            </div>
-          </div>
-
+          {/* Terms & Conditions */}
           <div className="avoid-break">
-            <h4 className="font-semibold text-lg text-gray-900 mb-4 pb-2 border-b border-gray-200">
+            <h4 className="font-semibold text-gray-900 mb-3 text-sm">
               Terms & Conditions
             </h4>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-5 space-y-2 text-xs text-gray-700 leading-relaxed">
               {terms.map((term, index) => (
-                <li
-                  key={index}
-                  className="text-sm text-gray-700 leading-relaxed"
-                >
-                  {term}
-                </li>
+                <li key={index}>{term}</li>
               ))}
             </ul>
+          </div>
+
+          {/* Footer */}
+          <div className="mt-12 pt-8 border-t border-gray-300 text-xs text-gray-600 text-center">
+            <p>
+              This is a computer generated invoice and does not require physical
+              signature
+            </p>
+            <p className="mt-1">
+              CIN: L17110MH1973PLC019786 | GST: 27AAACR5055K1Z7
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="text-center mt-8">
+      <div className="text-center mt-6">
         <button
           onClick={handlePrint}
-          className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
+          className="bg-gray-900 text-white py-2 px-6 rounded-sm hover:bg-gray-800 text-sm font-medium shadow-sm"
         >
           Download Invoice PDF
         </button>
