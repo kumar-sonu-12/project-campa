@@ -48,7 +48,8 @@ export async function GET(request: NextRequest) {
       isFormSubmitted: 1,
       Investment_Plan: 1,
       business_Types: 1,
-      final_form: 1
+      final_form: 1,
+      createdAt: 1
     });
     // console.log(users);
 

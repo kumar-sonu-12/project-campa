@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ArrowUpDown, Download, Search } from "lucide-react";
+import { ArrowUpDown, Download, Search, Calendar } from "lucide-react";
 import ExcelJS from "exceljs";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
@@ -31,6 +31,10 @@ export const AllTable = ({ applicantData }: DataProp) => {
     EmailDataProp[] | null
   >(null);
 
+  // Date filtering states
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
+
   console.log(applicantData);
 
   const handleSort = (key: keyof EmailDataProp) => {
@@ -53,15 +57,46 @@ export const AllTable = ({ applicantData }: DataProp) => {
     const term = event.target.value.toLowerCase();
     setSearchTerm(term);
 
-    const filteredData = applicantData.filter((item) =>
-      Object.values(item).some((value) => {
-        // Safely handle null or undefined values
-        if (value == null) return false;
-        return value.toString().toLowerCase().includes(term);
-      })
-    );
+    filterData(term, startDate, endDate);
+  };
+
+  // Function to apply both search and date filters
+  const filterData = (searchTerm: string, start: string, end: string) => {
+    let filteredData = [...applicantData];
+
+    // Apply search filter
+    if (searchTerm) {
+      filteredData = filteredData.filter((item) =>
+        Object.values(item).some((value) => {
+          if (value == null) return false;
+          return value.toString().toLowerCase().includes(searchTerm);
+        })
+      );
+    }
+
+    // Apply date filter if dates are provided
+    if (start && end) {
+      const startDateTime = new Date(start).getTime();
+      const endDateTime = new Date(end).getTime() + 86400000; // Add one day to include the end date
+
+      filteredData = filteredData.filter((item) => {
+        const itemDate = new Date(item.createdAt || "").getTime();
+        return itemDate >= startDateTime && itemDate <= endDateTime;
+      });
+    }
 
     setData(filteredData);
+  };
+
+  const handleDateFilterChange = () => {
+    filterData(searchTerm, startDate, endDate);
+  };
+
+  const resetFilters = () => {
+    setSearchTerm("");
+    setStartDate("");
+    setEndDate("");
+    setData(applicantData);
   };
 
   const exportToExcel = async () => {
@@ -81,7 +116,8 @@ export const AllTable = ({ applicantData }: DataProp) => {
       "investmenst paln",
       "Is Verified",
       "Has Paid",
-      "Is Form Submitted"
+      "Is Form Submitted",
+      "Date Applied"
     ];
     worksheet.addRow(headers);
     visibleData.forEach((item, index) => {
@@ -97,7 +133,8 @@ export const AllTable = ({ applicantData }: DataProp) => {
         item.isVerify ? "Yes" : "No",
         item.hasPaid ? "Yes" : "No",
         item.isFormSubmitted ? "Yes" : "No",
-        item.business_Types
+        // Format date if available
+        item.createdAt ? new Date(item.createdAt).toLocaleDateString() : "N/A"
       ]);
     });
 
@@ -133,39 +170,6 @@ export const AllTable = ({ applicantData }: DataProp) => {
     link.click();
     window.URL.revokeObjectURL(url);
   };
-
-  // const handlePrint = async () => {
-  //   if (typeof window === "undefined") return;
-
-  //   const element = document.getElementById("Leads");
-  //   if (!element) return;
-
-  //   const options = {
-  //     margin: [20, 20, 20, 20],
-  //     filename: "Campa-Cola-Approval-letter.pdf",
-  //     image: { type: "jpeg", quality: 1 },
-  //     html2canvas: {
-  //       scale: 2,
-  //       useCORS: true,
-  //       letterRendering: true,
-  //       logging: false
-  //     },
-  //     jsPDF: {
-  //       unit: "mm",
-  //       format: "a4",
-  //       orientation: "portrait",
-  //       compress: true
-  //     },
-  //     pagebreak: { mode: ["", "css", "legacy"] }
-  //   };
-
-  //   try {
-  //     const html2pdf = (await import("html2pdf.js")).default();
-  //     await html2pdf.from(element).set(options).save();
-  //   } catch (error) {
-  //     console.error("PDF generation failed:", error);
-  //   }
-  // };
 
   const handleOnRowClick = async (email: string) => {
     try {
@@ -206,6 +210,63 @@ export const AllTable = ({ applicantData }: DataProp) => {
                 </button>
               </div>
             </div>
+
+            {/* Date filter section */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-gray-500" />
+                <span className="text-sm font-medium text-gray-700">
+                  Filter by date:
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex-grow sm:flex-grow-0">
+                  <label
+                    htmlFor="startDate"
+                    className="block text-xs text-gray-500 mb-1"
+                  >
+                    Start Date
+                  </label>
+                  <input
+                    type="date"
+                    id="startDate"
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
+                    className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div className="flex-grow sm:flex-grow-0">
+                  <label
+                    htmlFor="endDate"
+                    className="block text-xs text-gray-500 mb-1"
+                  >
+                    End Date
+                  </label>
+                  <input
+                    type="date"
+                    id="endDate"
+                    value={endDate}
+                    onChange={(e) => setEndDate(e.target.value)}
+                    className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div className="flex items-end gap-2">
+                  <button
+                    onClick={handleDateFilterChange}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Apply Filter
+                  </button>
+                  <button
+                    onClick={resetFilters}
+                    className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <div className="overflow-x-auto -mx-3 sm:-mx-4 md:-mx-6">
               <div className="inline-block min-w-full align-middle">
                 <div className="overflow-hidden">
@@ -279,6 +340,15 @@ export const AllTable = ({ applicantData }: DataProp) => {
                           </div>
                         </TableHead>
                         <TableHead
+                          onClick={() => handleSort("createdAt")}
+                          className="cursor-pointer whitespace-nowrap px-2 sm:px-4"
+                        >
+                          <div className="flex items-center gap-2">
+                            Date Applied
+                            <ArrowUpDown className="h-4 w-4" />
+                          </div>
+                        </TableHead>
+                        <TableHead
                           onClick={() => handleSort("isFormSubmitted")}
                           className="cursor-pointer whitespace-nowrap px-2 sm:px-4"
                         >
@@ -339,6 +409,13 @@ export const AllTable = ({ applicantData }: DataProp) => {
                             {applicant.Investment_Plan}
                           </TableCell>
                           <TableCell className="whitespace-nowrap px-2 sm:px-4">
+                            {applicant.createdAt
+                              ? new Date(
+                                  applicant.createdAt
+                                ).toLocaleDateString()
+                              : "N/A"}
+                          </TableCell>
+                          <TableCell className="whitespace-nowrap px-2 sm:px-4">
                             <span
                               className={`px-2 py-1 rounded-full text-xs ${
                                 applicant.isFormSubmitted
@@ -374,6 +451,16 @@ export const AllTable = ({ applicantData }: DataProp) => {
                           </TableCell>
                         </TableRow>
                       ))}
+                      {data.length === 0 && (
+                        <TableRow>
+                          <TableCell
+                            colSpan={12}
+                            className="text-center py-8 text-gray-500"
+                          >
+                            No applicants found with the current filters.
+                          </TableCell>
+                        </TableRow>
+                      )}
                     </TableBody>
                   </Table>
                 </div>
@@ -399,15 +486,6 @@ export const AllTable = ({ applicantData }: DataProp) => {
           </DialogTitle>
         </DialogContent>
       </Dialog>
-
-      {/* <div className="text-center mt-6">
-        <button
-          onClick={handlePrint}
-          className="w-full sm:w-auto bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 transition-colors"
-        >
-          Download Leads
-        </button>
-      </div> */}
     </div>
   );
 };

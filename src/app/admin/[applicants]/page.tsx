@@ -21,7 +21,7 @@ const Page = async ({
     res = await getApplicants({
       usertype: applicantType.usertype
     });
-    console.log("got data", res);
+    // console.log("got data", res);
   }
 
   return (

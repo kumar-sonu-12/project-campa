@@ -13,6 +13,10 @@ export const SEO_CONFIG = {
     "authorized dealer",
     "sales network",
     "entrepreneurial opportunity",
-    "beverage distribution"
+    "beverage distribution",
+    "campa cola industries",
+    "campacolaindustries.com",
+    "campa cola industries.com",
+    "campa cola distributor"
   ]
 };
