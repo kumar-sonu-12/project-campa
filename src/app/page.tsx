@@ -1,3 +1,4 @@
+import { AboutUsReal } from "@/components/User/HomePage/Body/AboutUsSection/AboutReal";
 import { AboutUsMain } from "@/components/User/HomePage/Body/AboutUsSection/AboutUsMain";
 import { ApprovalMain } from "@/components/User/HomePage/Body/ApprovalSection.tsx/ApprovalMain";
 import { ContactFormMain } from "@/components/User/HomePage/Body/ContactForm/ContactFormMain";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <NavBar />
       <HeroMain />
+      <AboutUsReal />
       <AboutUsMain />
       <ApprovalMain />
       <ProcessMain />
