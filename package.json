@@ -43,7 +43,7 @@
     "firebase": "^11.2.0",
     "firebase-admin": "^13.0.2",
     "framer-motion": "^11.14.4",
-    "gsap": "^3.12.5",
+    "gsap": "^3.13.0",
     "hamburger": "^0.1.1",
     "html2pdf.js": "^0.10.2",
     "jsonwebtoken": "^9.0.2",

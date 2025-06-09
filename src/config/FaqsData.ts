@@ -1,23 +1,22 @@
 export const FaqsData = [
   {
-    question:
-      "What are the requirements to become a Campa Cola franchise partner?",
+    question: "How much does it cost to start a Campa Cola dealership?",
     solution:
-      "To become a Campa Cola franchise partner, you need a suitable business space, an initial investment for inventory, and a commitment to maintaining the brand's quality and customer service standards. Detailed criteria will be shared upon application."
+      "Depending on your region and store capacity, you can begin a Campa Cola dealership with an investment of ₹2–5 lakhs."
   },
   {
-    question: "How can I apply for a Campa Cola distributorship?",
+    question: "What are the benefits of a Campa Cola distribution?",
     solution:
-      "You can easily apply through our website. Fill out the application form with your details, upload any necessary documents, and submit your inquiry. Our team will review your application and get in touch for further steps."
+      "With a Campa Cola distributorship, company support for logistics and branding, better margins, exclusive territory rights, and earnings from bulk orders abound."
   },
   {
-    question: "How long does it take to get approval for a distributorship?",
+    question: "Is a franchise better than a dealership?",
     solution:
-      "The approval process typically takes 2-3 weeks, depending on the completeness of your application and document verification. Our team will keep you updated throughout the process."
+      "Though a Campa Cola dealership demands less investment, a franchise gives more control, exposure, and organized support from the Campa Cola firm."
   },
   {
-    question: "What are the benefits of partnering with Campa Cola?",
+    question: "Is the Campa Cola contact number active?",
     solution:
-      "Partnering with Campa Cola provides access to a trusted and iconic brand, high-quality products, extensive marketing support, and the opportunity to grow a profitable business in the beverage industry."
+      "For every corporate question, indeed, you can reach +91-9211268216. You can also email us or complete our request form on the official website."
   }
 ];

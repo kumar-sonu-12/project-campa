@@ -22,7 +22,7 @@ export const BoxTitle = ({ children }: HeadProp) => {
 
 export const BoxSubTitle = ({ children }: HeadProp) => {
   return (
-    <div className="text-white text-center font-[Satoshi Variable] text-[16px] 0.1sm:text-[20px] font-[400] leading-[27.2px]">
+    <div className="text-white text-center flex justify-center items-center font-[Satoshi Variable] text-[16px] 0.1sm:text-[20px] font-[400] leading-[27.2px] whitespace-normal break-words text-wrap">
       {children}
     </div>
   );
