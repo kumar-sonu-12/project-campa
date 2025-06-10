@@ -129,7 +129,7 @@ export const ProcessMain = () => {
       className="min-h-screen px-[16px] sm:px-[20px] md:px-[30px] lg:px-[60px] xl:px-[100px] py-[90px] h-auto flex-shrink-0 flex flex-col gap-[48px] sm:gap-[54px] md:gap-[60px] lg:gap-[74px] relative"
     >
       <Image
-        src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
+        src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541154/image_30_er0yjq.png"
         layout="fill"
         alt="process background image"
         loading="lazy"
