@@ -10,7 +10,7 @@ const processData = [
   {
     id: "1",
     title: "Contact Our Team",
-    description: `You may reach us via phone or WhatsApp at +91-9211268216, or by email at campabeverages@ril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
+    description: `You may reach us via phone or WhatsApp at +91-9117587267, or by email at campabeverages@ril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
   },
   {
     id: "2",
@@ -39,11 +39,11 @@ const highlightKeywords = (text: string, keywords: string[]) => {
 
   return parts.map((part, index) => {
     // Check for phone number
-    if (part === "+91-9211268216") {
+    if (part === "+91-9117587267") {
       return (
         <a
           key={index}
-          href="tel:+919211268216"
+          href="tel:+919117587267"
           className="text-[#F3B814] cursor-pointer font-semibold underline"
         >
           {part}
@@ -65,11 +65,11 @@ const highlightKeywords = (text: string, keywords: string[]) => {
     }
 
     // Check for website URL
-    if (part === "https://campacolaindustrie.com/") {
+    if (part === "https://campaindustries.com/") {
       return (
         <a
           key={index}
-          href="https://campacolaindustrie.com/"
+          href="https://campaindustries.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#F3B814] cursor-pointer font-semibold underline"
@@ -84,9 +84,9 @@ const highlightKeywords = (text: string, keywords: string[]) => {
       (kw) =>
         kw.toLowerCase() === part.toLowerCase() &&
         ![
-          "+91-9211268216",
+          "+91-9117587267",
           "campabeverages@ril.in",
-          "https://campacolaindustrie.com/"
+          "https://campaindustries.com/"
         ].includes(kw)
     );
 
@@ -102,11 +102,11 @@ const highlightKeywords = (text: string, keywords: string[]) => {
 
 export const ProcessMain = () => {
   const keywords = [
-    "+91-9211268216",
+    "+91-9117587267",
     "WhatsApp",
     "email",
     "campabeverages@ril.in",
-    "https://campacolaindustrie.com/",
+    "https://campaindustries.com/",
     "dealership",
     "distributorship",
     "franchise",

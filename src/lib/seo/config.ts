@@ -4,7 +4,7 @@ export const SEO_CONFIG = {
     "Campa Cola Dealership | Start Your Business as an Authorized Dealer | Campa Cola Beverages",
   description:
     "Become an authorized Campa Cola dealer. Explore exclusive distributorship opportunities, grow your business with a trusted beverage network, and unlock your entrepreneurial potential.",
-  canonicalBaseUrl: "https://www.campacolaindustries.com",
+  canonicalBaseUrl: "https://www.campaindustries.com",
   keywords: [
     "Campa Cola dealership",
     "Campa Cola distributorship",
@@ -17,6 +17,8 @@ export const SEO_CONFIG = {
     "campa cola industries",
     "campacolaindustries.com",
     "campa cola industries.com",
-    "campa cola distributor"
+    "campa cola distributor",
+    "campaindustries.com",
+    "campa industries.com"
   ]
 };
