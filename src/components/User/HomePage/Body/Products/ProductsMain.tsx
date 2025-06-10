@@ -12,22 +12,22 @@ export const ProductsMain = () => {
   const ProductsUrl = [
     {
       imgUrl:
-        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395944/s4pbegsonkz1yltkvi9w.svg",
+        "https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541423/Untitled-design-17-768x1280_1_1_stqc4r.svg",
       imgTitle: "campa cola image"
     },
     {
       imgUrl:
-        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/dpg0pegafjh9vdedqaok.svg",
+        "https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541420/Untitled-design-18-768x1280_1_1_n79mq9.svg",
       imgTitle: "campa orange image"
     },
     {
       imgUrl:
-        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395945/eumrucefhpgx1o8uak2i.svg",
+        "https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541417/Untitled-design-15-768x1280_1_1_fwbnoo.svg",
       imgTitle: "campa lemon image"
     },
     {
       imgUrl:
-        "https://res.cloudinary.com/dehegwbs0/image/upload/v1734395946/bkj2hy0ckqlahpkbfqxe.svg",
+        "https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541416/Untitled-design-19-768x1280_1_1_imue35.svg",
       imgTitle: "campa powerup image"
     }
   ];
@@ -71,11 +71,11 @@ export const ProductsMain = () => {
         className="min-h-screen flex flex-col px-[16px] sm:px-[20px] md:px-[30px] lg:px-[60px] xl:px-[100px] gap-[50px] sm:gap-[90px] md:gap-[100px] lg:gap-[142px] py-[80px] h-auto flex-shrink-0 relative"
       >
         <Image
-          src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734395044/xfjb1pdu9gelhjzfqckf.svg"
+          src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541154/image_30_er0yjq.png"
           layout="fill"
           alt=""
           placeholder="blur"
-          blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734395044/xfjb1pdu9gelhjzfqckf.svg"
+          blurDataURL="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541154/image_30_er0yjq.png"
           className="absolute opacity-50 bg-blend-overlay"
         />
         <div className="flex flex-col gap-[50px] sm:gap-[64px] md:gap-[72px] lg:gap-[84px]">
@@ -110,7 +110,7 @@ export const ProductsMain = () => {
                 personality will surely make your heart skip a beat!
               </TitleDescription>
               <Image
-                src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734396761/osewpofteczb48fcmm5e.svg"
+                src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541411/INDIA_FINAL_b8d06bf716-1011x1024_2_1_kcq8xg.svg"
                 height={599}
                 width={591}
                 placeholder="blur"
@@ -134,12 +134,12 @@ export const ProductsMain = () => {
             ))}
             <div className="flex flex-col 1.5md:flex-row items-center justify-center 1.5lg:justify-between ">
               <Image
-                src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734397813/or8x8ra6t36lrhhznow6.svg"
+                src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541751/Campa_Cola_8728b089e2-1011x1024_2_2_uwgpjx.svg"
                 height={602}
                 width={594}
                 alt="join the campa revolution image"
                 placeholder="blur"
-                blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734397813/or8x8ra6t36lrhhznow6.svg"
+                blurDataURL="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541751/Campa_Cola_8728b089e2-1011x1024_2_2_uwgpjx.svg"
                 className="rounded-xl aspect-video w-full  xl:w-[570px] xl:h-[588px] 1.5xl:w-[594px] 1.5xl:h-[602px]"
               />
               <CampaignTitle>Join the Campa Revolution!</CampaignTitle>

@@ -19,18 +19,18 @@ export const HeroMain = () => {
         className="h-auto md:min-h-screen px-[16px] sm:px-[25px] md:px-[40px] lg:px-[70px] xl:px-[122px] w-full  py-[85px] 0.5sm:py-[80px] sm:py-[100px] z-0 md:pb-48 flex  overflow-x-hidden "
       >
         <Image
-          src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734301154/hge9vw5xqlbypyowwxz9.svg"
+          src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749540663/transparent_1_1_2_d1pscz.png"
           alt="hero background image"
           layout="fill"
           style={{
             mixBlendMode: "overlay"
           }}
           placeholder="blur"
-          blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734301154/hge9vw5xqlbypyowwxz9.svg"
+          blurDataURL="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749539914/Hero_Image_1_ovu7jh.svg"
           className="absolute opacity-100  inset-0 md:opacity-80  "
         />
         <Image
-          src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734317185/dpe2njiwb1ckgzbpyfwb.svg"
+          src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749539914/Main_Image_1_xa8onl.svg"
           width={813}
           height={826}
           alt="hero main img"
@@ -42,7 +42,7 @@ export const HeroMain = () => {
         <div className="flex flex-col justify-center items-center w-full max-w-6xl gap-[25px] 0.5sm:gap-0 sm:w-auto pt-2">
           <div className="flex justify-center w-full sm:w-auto">
             <Image
-              src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734312929/nytukcu2kxxipi5gf7et.svg"
+              src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749539914/Hero_Image_1_ovu7jh.svg"
               className="w-1/6 block  sm:w-full h-auto"
               height={179}
               width={206.447}

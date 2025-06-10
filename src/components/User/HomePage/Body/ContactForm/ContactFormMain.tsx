@@ -82,11 +82,11 @@ export const ContactFormMain = ({ mainForm }: { mainForm: boolean }) => {
       className="min-h-screen px-[16px] sm:px-6 lg:px-20 py-10 flex flex-col items-center gap-10 mt-0 relative"
     >
       <Image
-        src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
+        src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541154/image_30_er0yjq.png"
         layout="fill"
         alt="main bg image"
         placeholder="blur"
-        blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734393655/gc1dkcw6rozqcxpacdzs.svg"
+        blurDataURL="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749541154/image_30_er0yjq.png"
         className="absolute inset-0 object-cover opacity-50"
       />
       <TitleHead>Contact Campa Cola Today!</TitleHead>

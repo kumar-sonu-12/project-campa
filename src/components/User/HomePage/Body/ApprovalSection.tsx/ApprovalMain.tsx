@@ -24,12 +24,12 @@ export const ApprovalMain = () => {
         className=" 1.5md:min-h-screen px-[16px] sm:px-[20px] md:px-[30px] lg:px-[60px] xl:px-[110px] overflow-y-hidden py-[100px] sm:py-[125px] md:py-[175px] 1.5md:pb-[236px] 1.5md:pt-[226px] flex flex-col gap-[26px] sm:gap-[30px] md:gap-[36px] 1.5md:gap-[40px]  h-auto flex-shrink-0 relative"
       >
         <Image
-          src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734390235/amqqenzjk1ewrxe1lspm.svg"
+          src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749540896/download_1_1_uj76sh.svg"
           width={750}
           height={1100}
           className="absolute right-0 top-0 hidden 1.5md:block"
           placeholder="blur"
-          blurDataURL="https://res.cloudinary.com/dehegwbs0/image/upload/v1734390235/amqqenzjk1ewrxe1lspm.svg"
+          blurDataURL="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749540896/download_1_1_uj76sh.svg"
           alt="campa bottle image"
         />
         <FrstHeading>APPROVAL PROCESS</FrstHeading>
