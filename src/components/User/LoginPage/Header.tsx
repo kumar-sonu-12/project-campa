@@ -8,7 +8,7 @@ export const LoginHeader = () => {
     <div>
       <div className="w-full h-[70px] 0.5sm:h-[84px] fixed z-[101] px-2 xsm:px-[20px] md:px-[40px] flex-shrink-0 gap-[28px] lg:gap-[50px] 1.5lg:gap-[75px] flex  items-center bg-[#582590]">
         <Image
-          src="https://res.cloudinary.com/dehegwbs0/image/upload/v1734304511/s0bjniaumh1yn0ox5fl6.svg"
+          src="https://res.cloudinary.com/dfe8sdlkc/image/upload/v1749539913/Logo_1_zkuvtd.svg"
           height={57.437}
           width={174}
           placeholder="blur"
