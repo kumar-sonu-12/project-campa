@@ -63,7 +63,8 @@ export const FormDataArray = [
       { value: "Tripura", label: "Tripura" },
       { value: "Uttar Pradesh", label: "Uttar Pradesh" },
       { value: "Uttarakhand", label: "Uttarakhand" },
-      { value: "West Bengal", label: "West Bengal" }
+      { value: "West Bengal", label: "West Bengal" },
+      { value: "Jammu & Kashmir", label: "Jammu & Kashmir" }
     ],
 
     placeholder: "Select your state",
