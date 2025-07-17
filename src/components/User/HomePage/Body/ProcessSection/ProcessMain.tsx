@@ -10,7 +10,7 @@ const processData = [
   {
     id: "1",
     title: "Contact Our Team",
-    description: `You may reach us via phone or WhatsApp at +91-9117587267, or by email at campabeverages@ril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
+    description: `You may reach us via phone or WhatsApp at +91-9117587267, or by email at business@campabeveragesril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
   },
   {
     id: "2",

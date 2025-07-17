@@ -6,6 +6,7 @@ import "./globals.css";
 
 import { Toaster } from "react-hot-toast";
 import { baseMetadata } from "@/lib/seo/metadata";
+import Head from "next/head";
 // import { NavBar } from "@/components/User/HomePage/Navbar/NavBar";
 
 const merienda = Merienda({
@@ -33,6 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="omiT6uUl05ny_jFBKpg7TblSZkVpOJDXPD9X-WhdkWY"
+        />
+      </Head>
       <body
         className={` ${geistSans.variable} ${geistMono.variable} ${merienda.variable} antialiased`}
       >
