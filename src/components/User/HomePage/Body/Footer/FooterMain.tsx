@@ -3,6 +3,7 @@ import {
   TitlebHead
 } from "@/components/ui/TypoGraphy/ApprovalTypography";
 import Image from "next/image";
+import { Linkedin } from "lucide-react";
 
 export const FooterMain = () => {
   return (
@@ -86,7 +87,7 @@ export const FooterMain = () => {
           </div>
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Information + LinkedIn */}
         <div className="border-t border-white/20 pt-8 mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
@@ -108,6 +109,18 @@ export const FooterMain = () => {
                   className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium break-all"
                 >
                   business@campabeveragesril.in
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Linkedin className="w-5 h-5 text-white" />
+                <span className="font-medium">LinkedIn:</span>
+                <a
+                  href="https://www.linkedin.com/company/campacola"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium"
+                >
+                  /campacola
                 </a>
               </div>
             </div>

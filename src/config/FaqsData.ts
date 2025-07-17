@@ -17,6 +17,6 @@ export const FaqsData = [
   {
     question: "Is the Campa Cola contact number active?",
     solution:
-      "For every corporate question, indeed, you can reach +91-9211268216. You can also email us or complete our request form on the official website."
+      "For every corporate question, indeed, you can reach +91-9117587267. You can also email us or complete our request form on the official website."
   }
 ];
