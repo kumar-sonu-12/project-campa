@@ -54,8 +54,7 @@ export const baseMetadata: Metadata = {
   },
 
   verification: {
-    google: "your-google-site-verification-code"
-    // bing: "your-bing-site-verification-code"
+    google: "omiT6uUl05ny_jFBKpg7TblSZkVpOJDXPD9X-WhdkWY"
   },
 
   alternates: {
