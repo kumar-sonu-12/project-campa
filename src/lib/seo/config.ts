@@ -1,7 +1,6 @@
 export const SEO_CONFIG = {
   siteName: "Campacola Industries",
-  defaultTitle:
-    "Campa Cola Dealership – Start Your Beverage Business as an Authorized Dealer",
+  defaultTitle: "Campa Cola Dealership - Start Your Business Today",
   description:
     "Start your profitable Campa Cola dealership today. Low investment, high returns with India's trusted beverage brand. Apply now for exclusive territory rights.",
   canonicalBaseUrl: "https://www.campaindustries.com",
