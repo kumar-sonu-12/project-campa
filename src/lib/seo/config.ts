@@ -1,24 +1,30 @@
 export const SEO_CONFIG = {
   siteName: "Campacola Industries",
-  defaultTitle:
-    "Campa Cola Dealership | Start Your Business as an Authorized Dealer | Campa Cola Beverages",
+  defaultTitle: "Campa Cola Dealership - Start Your Business Today",
   description:
-    "Become an authorized Campa Cola dealer. Explore exclusive distributorship opportunities, grow your business with a trusted beverage network, and unlock your entrepreneurial potential.",
+    "Start your profitable Campa Cola dealership today. Low investment, high returns with India's trusted beverage brand. Apply now for exclusive territory rights.",
   canonicalBaseUrl: "https://www.campaindustries.com",
   keywords: [
-    "Campa Cola dealership",
-    "Campa Cola distributorship",
-    "Campa Cola franchise",
-    "beverage business opportunity",
-    "authorized dealer",
-    "sales network",
-    "entrepreneurial opportunity",
-    "beverage distribution",
-    "campa cola industries",
-    "campacolaindustries.com",
-    "campa cola industries.com",
-    "campa cola distributor",
-    "campaindustries.com",
-    "campa industries.com"
+    "Campa Cola franchise opportunity",
+    "Campa Cola dealership program",
+    "Campa Cola distributorship requirements",
+    "Campa Cola dealership in [banglore,mumbai,delhi,bihar,kolkata,hyderabad,chennai,pune,gujarat,rajasthan,kerala,up,orissa,assam]",
+    "beverage distributorship in India",
+    "Campa Cola dealer near me",
+    "Campa Cola franchise cost",
+    "Campa Cola dealership investment",
+    "how much to invest in Campa Cola distributorship",
+    "low-investment beverage distributorship",
+    "profitable soft drink dealership",
+    "authorized Campa Cola dealer benefits",
+    "entrepreneurial opportunity in beverages",
+    "start a cold drink distributorship",
+    "FMCG dealership business model",
+    "Campa Cola distribution network",
+    "soft drink distribution opportunities",
+    "beverage sales network setup",
+    "CampaColaIndustries.com dealership",
+    "campacola industries distributorship",
+    "campaindustries.com apply dealership"
   ]
 };
