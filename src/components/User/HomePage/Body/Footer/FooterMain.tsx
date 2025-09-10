@@ -95,21 +95,32 @@ export const FooterMain = () => {
                 <span className="text-[#F3B814] text-lg">📞</span>
                 <span className="font-medium">Phone:</span>
                 <a
-                  href="tel:+919117587267"
+                  href="tel:+917501017115"
                   className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium"
                 >
-                  +91-9117587267
+                  +917501017115
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#F3B814] text-lg">✉️</span>
-                <span className="font-medium">Email:</span>
-                <a
-                  href="mailto:business@campabeveragesril.in"
-                  className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium break-all"
-                >
-                  business@campabeveragesril.in
-                </a>
+              <div className="flex gap-2">
+                <div className="flex items-center">
+                  <span className="text-[#F3B814] text-lg">✉️</span>
+                  <span className="font-medium">Emails:</span>
+                </div>
+                <div>
+                  <a
+                    href="mailto:business@campabeveragesril.in"
+                    className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium break-all"
+                  >
+                    business@campabeveragesril.in
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:business@campabeveragesril.in"
+                    className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium break-all"
+                  >
+                    business@campacolaril.com
+                  </a>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Linkedin className="w-5 h-5 text-white" />
@@ -120,7 +131,7 @@ export const FooterMain = () => {
                   rel="noopener noreferrer"
                   className="text-[#F3B814] hover:text-[#F3B814]/80 transition-colors font-medium"
                 >
-                  /campacola
+                  campacola
                 </a>
               </div>
             </div>
