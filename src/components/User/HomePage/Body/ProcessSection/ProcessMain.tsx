@@ -10,7 +10,7 @@ const processData = [
   {
     id: "1",
     title: "Contact Our Team",
-    description: `You may reach us via phone or WhatsApp at +91-9117587267, or by email at business@campabeveragesril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
+    description: `You may reach us via phone or WhatsApp at +91-7501017115, or by email at business@campacolaril.com and business@campabeveragesril.in. For faster processing, we recommend filling out the inquiry form on our official website: https://campacolaindustrie.com/.`
   },
   {
     id: "2",
@@ -39,11 +39,11 @@ const highlightKeywords = (text: string, keywords: string[]) => {
 
   return parts.map((part, index) => {
     // Check for phone number
-    if (part === "+91-9117587267") {
+    if (part === "+91-7501017115") {
       return (
         <a
           key={index}
-          href="tel:+919117587267"
+          href="tel:+917501017115"
           className="text-[#F3B814] cursor-pointer font-semibold underline"
         >
           {part}
@@ -52,11 +52,14 @@ const highlightKeywords = (text: string, keywords: string[]) => {
     }
 
     // Check for email
-    if (part === "campabeverages@ril.in") {
+    if (
+      part === "business@campacolaril.com" ||
+      part === "business@campabeveragesril.in"
+    ) {
       return (
         <a
           key={index}
-          href="mailto:campabeverages@ril.in"
+          href="mailto:business@campacolaril.com"
           className="text-[#F3B814] cursor-pointer font-semibold underline"
         >
           {part}
@@ -79,13 +82,13 @@ const highlightKeywords = (text: string, keywords: string[]) => {
       );
     }
 
-    // Check for other keywords to highlight (case-insensitive)
     const matched = keywords.find(
       (kw) =>
         kw.toLowerCase() === part.toLowerCase() &&
         ![
-          "+91-9117587267",
-          "campabeverages@ril.in",
+          "+91-7501017115",
+          "business@campacolaril.com",
+          "business@campabeveragesril.in",
           "https://campaindustries.com/"
         ].includes(kw)
     );
@@ -102,10 +105,11 @@ const highlightKeywords = (text: string, keywords: string[]) => {
 
 export const ProcessMain = () => {
   const keywords = [
-    "+91-9117587267",
+    "+91-7501017115",
     "WhatsApp",
     "email",
-    "campabeverages@ril.in",
+    "business@campacolaril.com",
+    "business@campabeveragesril.in",
     "https://campaindustries.com/",
     "dealership",
     "distributorship",
